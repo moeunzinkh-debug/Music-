@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.MusicPlayer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+    
+    <!-- ប៊ូតុងគ្រប់គ្រង -->
+    <style name="ControlButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/control_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+    
+    <!-- ប៊ូតុងចម្បង -->
+    <style name="ControlButton.Primary">
+        <item name="android:backgroundTint">@color/play_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="cornerRadius">35dp</item>
+        <item name="android:elevation">12dp</item>
+    </style>
+    
+    <!-- ប៊ូតុងម៉ោងគេង -->
+    <style name="SleepButton">
+        <item name="android:backgroundTint">@color/sleep_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+    
+    <style name="SleepButton.Cancel">
+        <item name="android:backgroundTint">@android:color/darker_gray</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="cornerRadius">20dp</item>
+    </style>
+</resources>
