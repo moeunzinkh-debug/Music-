@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    android:padding="20dp">
+
+    <!-- ឈ្មោះចម្រៀង -->
+    <TextView
+        android:id="@+id/tvSongTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="កំពុងជ្រើសរើសចម្រៀង..."
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:shadowColor="#80000000"
+        android:shadowRadius="4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <!-- រូបសំណាក -->
+    <ImageView
+        android:id="@+id/ivAlbumArt"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_music_note"
+        app:layout_constraintTop_toBottomOf="@id/tvSongTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ពេលវេលា -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ivAlbumArt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:progressTint="@android:color/white"
+            android:thumbTint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvTotalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- ប៊ូតុងគ្រប់គ្រង -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="⏮"
+            android:textSize="20sp"
+            style="@style/ControlButton" />
+
+        <Button
+            android:id="@+id/btnPlayPause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="▶"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="20dp"
+            style="@style/ControlButton.Primary" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="⏭"
+            android:textSize="20sp"
+            style="@style/ControlButton" />
+    </LinearLayout>
+
+    <!-- ម៉ោងគេង -->
+    <TextView
+        android:id="@+id/tvSleepTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ម៉ោងគេង: មិនទាន់កំណត់"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnPlayPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- ប៊ូតុងម៉ោងគេង -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvSleepTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/btnSleep15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="15 នាទី"
+            android:layout_margin="5dp"
+            style="@style/SleepButton" />
+
+        <Button
+            android:id="@+id/btnSleep30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="30 នាទី"
+            android:layout_margin="5dp"
+            style="@style/SleepButton" />
+
+        <Button
+            android:id="@+id/btnSleep60"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="60 នាទី"
+            android:layout_margin="5dp"
+            style="@style/SleepButton" />
+
+        <Button
+            android:id="@+id/btnCancelSleep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="បោះបង់"
+            android:layout_margin="5dp"
+            style="@style/SleepButton.Cancel" />
+    </LinearLayout>
+
+    <!-- ប៊ូតុងផ្លាស់ប្តូរពណ៌ -->
+    <Button
+        android:id="@+id/btnChangeTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ផ្លាស់ពណ៌"
+        android:layout_marginTop="20dp"
+        style="@style/ControlButton"
+        app:layout_constraintTop_toBottomOf="@id/btnSleep15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
